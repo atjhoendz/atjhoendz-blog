@@ -55,28 +55,20 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(30),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header style={{ marginBottom:'1.5rem' }}>
+    <div className='layout'>
+      <header className="header">
         {header}
-        <ul style={{ listStyle: `none`, float: `right` }}>
+        <ul>
             <ListLink to="/">Home</ListLink>
             <ListLink to="/blogs">Blogs</ListLink>
-            <ListLink to="/about/">About</ListLink>
-            <ListLink to="/contact/">Contact</ListLink>
+            <ListLink to="/projects">Projects</ListLink>
+            <ListLink to="/about">About</ListLink>
+            <ListLink to="/contact">Contact</ListLink>
         </ul>
       </header>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <main className="content">{children}</main>
+      <footer className="footer">
+        © {new Date().getFullYear()} - atjhoendz
       </footer>
     </div>
   )
